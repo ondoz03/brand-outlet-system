@@ -12,7 +12,7 @@ Ensure the following tools are installed:
 - **PHP** (version 8.0 or later)
 - **Composer**
 - **Laravel** (latest version recommended)
-- **MySQL** or another supported database
+- **SQLite** (or another supported database)
 - **Node.js** (for frontend build tools)
 - **npm or Yarn**
 
@@ -41,7 +41,15 @@ Ensure the following tools are installed:
      ```bash
      cp .env.example .env
      ```
-   - Update the `.env` file with your database credentials and other necessary configurations.
+   - Update the `.env` file with the following configuration to use SQLite:
+     ```env
+     DB_CONNECTION=sqlite
+     DB_DATABASE=/path/to/database/database.sqlite
+     ```
+   - Ensure the SQLite database file exists:
+     ```bash
+     touch database/database.sqlite
+     ```
 
 4. **Generate Application Key**
    ```bash
