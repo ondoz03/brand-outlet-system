@@ -11,7 +11,7 @@ class BrandController extends Controller
 {
     public function index()
     {
-        $brands = Brand::with('outlets')->get();
+        $brands = Brand::with('outlets')->paginate(5);
         return Inertia::render('Brands/Index', ['brands' => $brands]);
     }
 
@@ -19,19 +19,19 @@ class BrandController extends Controller
     {
         $request->validate(['name' => 'required|string|max:255']);
         Brand::create($request->only('name'));
-        return redirect()->back()->with('message', 'Brand created successfully!');
+        return redirect()->route('brands.index')->with('message', 'Brand created successfully!');
     }
 
     public function update(Request $request, Brand $brand)
     {
         $request->validate(['name' => 'required|string|max:255']);
         $brand->update($request->only('name'));
-        return redirect()->back()->with('message', 'Brand updated successfully!');
+        return redirect()->route('brands.index')->with('message', 'Brand updated successfully!');
     }
 
     public function destroy(Brand $brand)
     {
         $brand->delete();
-        return redirect()->back()->with('message', 'Brand deleted successfully!');
+        return redirect()->route('brands.index')->with('message', 'Brand deleted successfully!');
     }
 }

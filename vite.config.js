@@ -18,4 +18,9 @@ export default defineConfig({
     outDir: 'public/build',
     manifest: true,    // Ensure manifest is generated
   },
+  resolve: {
+    alias: {
+      '@': '/resources/js',
+    },
+  },
 });
