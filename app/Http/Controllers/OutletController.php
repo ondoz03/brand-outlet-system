@@ -12,7 +12,7 @@ class OutletController extends Controller
 {
     public function index()
     {
-        $outlets = Outlet::with('brand')->paginate(3);
+        $outlets = Outlet::with('brand')->paginate(5);
         $brands = Brand::all();
         return Inertia::render('Outlets/Index', ['outlets' => $outlets, 'brands' => $brands]);
     }
