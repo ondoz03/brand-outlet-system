@@ -44,7 +44,7 @@ class OutletApiController extends Controller
         }
     }
 
-    function calculateDistance($lat1, $lon1, $lat2, $lon2)
+    private function calculateDistance($lat1, $lon1, $lat2, $lon2)
     {
         $earthRadius = 6371;
         $latFrom = deg2rad($lat1);

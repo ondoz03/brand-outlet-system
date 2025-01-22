@@ -14,9 +14,26 @@ class BrandSeeder extends Seeder
     public function run(): void
     {
         DB::table('brands')->insert([
-            ['name' => 'Brand A'],
-            ['name' => 'Brand B'],
-            ['name' => 'Brand C'],
+            [
+                'name' => 'Outlet A',
+                'slug' => 'outlet-a',
+                'description' => 'This is Outlet A, located in city center.',
+            ],
+            [
+                'name' => 'Outlet B',
+                'slug' => 'outlet-b',
+                'description' => 'This is Outlet B, a popular outlet in the area.',
+            ],
+            [
+                'name' => 'Outlet C',
+                'slug' => 'outlet-c',
+                'description' => 'Outlet C provides various services and products.',
+            ],
+            [
+                'name' => 'Outlet D',
+                'slug' => 'outlet-d',
+                'description' => 'Outlet D is a new outlet in the city.',
+            ],
         ]);
     }
 }

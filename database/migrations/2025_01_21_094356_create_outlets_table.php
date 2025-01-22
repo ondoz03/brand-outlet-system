@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('outlets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
+            $table->string('slug');
             $table->string('name');
             $table->string('address');
-            $table->decimal('latitude', 10, 7);
-            $table->decimal('longitude', 10, 7);
+            $table->decimal('longitude', 9, 6)->nullable();
+            $table->decimal('latitude', 8, 6)->nullable();
+            $table->float('distance_miles')->nullable();
+            $table->float('distance_kilometer')->nullable();
             $table->timestamps();
         });
     }

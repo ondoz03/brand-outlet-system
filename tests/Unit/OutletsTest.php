@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Test;
 class OutletsTest extends TestCase
 {
 
-
     #[Test]
     public function it_creates_an_outlet()
     {
